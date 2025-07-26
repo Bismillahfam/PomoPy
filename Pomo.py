@@ -11,7 +11,7 @@ window.configure(bg="black")
 window.mainloop()
 
 # Create a canvas for the timer
-canvas = tk.Canvas(window, width=400, height=300, bg="red", highlightthickness=0)
-canvas.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
+canvas = tk.Canvas(window, width=400, height=300, bg="red", highlightthickness=0, border=2)
+canvas.place(anchor=tk.CENTER)
 
 timerCircle = canvas.create_oval(50, 50, 350, 250, fill="white")

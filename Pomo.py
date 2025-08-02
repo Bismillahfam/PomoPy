@@ -8,6 +8,7 @@ window = tk.Tk()
 window.title("Pomodoro Timer")
 window.geometry("400x300")
 window.configure(bg="black")
+window.mainloop()
 
 
 # Canvas for the timer
@@ -15,4 +16,3 @@ canvas = tk.Canvas(window, width=400, height=300, bg="white", highlightthickness
 canvas.anchor = "center"
 canvas.pack()
 
-window.mainloop()

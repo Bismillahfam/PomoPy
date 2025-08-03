@@ -1,6 +1,6 @@
-# 🍅 PomoPy - Desktop Pomodoro Timer
+# 🍅 PomoPy - Graphical Pomodoro Timer
 
-A beautiful and functional desktop pomodoro timer application built with Python and Tkinter.
+A beautiful and functional graphical pomodoro timer application built with Python and Pygame.
 
 ## Features
 
@@ -10,13 +10,14 @@ A beautiful and functional desktop pomodoro timer application built with Python 
 - **Short Break**: 5-minute breaks between work sessions (customizable)
 - **Long Break**: 15-minute breaks after 4 pomodoros (customizable)
 - **Auto-switching**: Automatically switches between work and break modes
-- **Progress Bar**: Visual progress indicator for current session
+- **Visual Progress Bar**: Real-time progress indicator for current session
 
 ### 🎛️ Controls
 
-- **Start/Pause**: Control timer execution
-- **Reset**: Reset current session
-- **Mode Selection**: Manually switch between work, short break, and long break modes
+- **Start/Pause**: Click button to control timer execution
+- **Reset**: Reset current session with one click
+- **Mode Selection**: Easy switching between work, short break, and long break modes
+- **Mouse-driven**: Intuitive click-based interface
 
 ### 📊 Statistics
 
@@ -32,17 +33,31 @@ A beautiful and functional desktop pomodoro timer application built with Python 
 
 ### 🎨 User Interface
 
-- **Modern Design**: Clean, dark theme with colorful accents
-- **Responsive Layout**: Well-organized interface elements
-- **Visual Feedback**: Color-coded modes and progress indicators
-- **Notifications**: System alerts when sessions complete
+- **Modern Graphics**: Beautiful Pygame-based interface
+- **Cross-platform**: Works on Windows, macOS, and Linux
+- **Visual Feedback**: Color-coded modes and hover effects
+- **Notifications**: Popup dialogs when sessions complete
 
 ## Installation
 
 ### Prerequisites
 
 - Python 3.6 or higher
-- Tkinter (usually included with Python)
+- Pygame library
+
+### Installing Dependencies
+
+1. **Install Pygame** using pip:
+
+```bash
+pip install pygame
+```
+
+Or install from requirements.txt:
+
+```bash
+pip install -r requirements.txt
+```
 
 ### Running the Application
 
@@ -70,22 +85,23 @@ python Pomo.py
 - **Short Break** (Blue): Quick breaks between work sessions
 - **Long Break** (Purple): Extended breaks after multiple pomodoros
 
-### Controls
+### Interface Controls
 
-- **Start**: Begin the current timer
-- **Pause**: Pause the running timer
-- **Reset**: Reset the current session to full duration
+- **Start Button**: Begin the current timer
+- **Pause Button**: Pause the running timer
+- **Reset Button**: Reset the current session to full duration
 - **Mode Buttons**: Switch between work, short break, and long break
+- **Settings Button**: Access timer settings
 
 ### Settings
 
-1. **Click "⚙️ Settings"** to open the settings window
+1. **Click "Settings"** to open the settings dialog
 2. **Adjust** the timer durations as needed:
    - Work Time (default: 25 minutes)
    - Short Break (default: 5 minutes)
    - Long Break (default: 15 minutes)
    - Pomodoros before long break (default: 4)
-3. **Click "Save Settings"** to apply changes
+3. **Save** your changes
 
 ## Pomodoro Technique
 
@@ -112,21 +128,11 @@ The Pomodoro Technique is a time management method developed by Francesco Cirill
 PomoPy/
 ├── Pomo.py              # Main application file
 ├── README.md            # This documentation
+├── requirements.txt     # Python dependencies
 └── pomodoro_settings.json  # Settings file (created automatically)
 ```
 
 ## Customization
-
-### Colors and Themes
-
-The application uses a dark theme with the following color scheme:
-
-- **Background**: Dark blue-gray (#2c3e50)
-- **Timer Frame**: Lighter blue-gray (#34495e)
-- **Work Mode**: Red (#e74c3c)
-- **Short Break**: Blue (#3498db)
-- **Long Break**: Purple (#9b59b6)
-- **Buttons**: Green (#27ae60), Orange (#f39c12), Red (#e74c3c)
 
 ### Timer Durations
 
@@ -137,11 +143,22 @@ You can customize all timer durations through the settings:
 - **Long Break**: 5-30 minutes (recommended: 15 minutes)
 - **Pomodoros before Long Break**: 1-10 (recommended: 4)
 
+### Visual Elements
+
+The application uses a modern color scheme:
+
+- **Background**: Dark blue-gray (#2c3e50)
+- **Panels**: Lighter blue-gray (#34495e)
+- **Work Mode**: Red (#e74c3c)
+- **Short Break**: Blue (#3498db)
+- **Long Break**: Purple (#9b59b6)
+- **Buttons**: Green (#27ae60), Orange (#f39c12), Red (#e74c3c)
+
 ## Technical Details
 
 ### Dependencies
 
-- **tkinter**: GUI framework (built-in with Python)
+- **pygame**: Graphics and game development library
 - **threading**: For non-blocking timer functionality
 - **json**: For settings persistence
 - **time**: For timer implementation
@@ -150,18 +167,37 @@ You can customize all timer durations through the settings:
 ### Architecture
 
 - **Object-oriented design** with a main `PomodoroTimer` class
+- **Pygame-based graphics** for modern UI
 - **Threading** for background timer execution
 - **Event-driven** UI updates
 - **Settings persistence** using JSON files
+
+### Platform Support
+
+- **Windows**: Full support with native window management
+- **macOS**: Full support with proper window handling
+- **Linux**: Full support with X11/Wayland compatibility
 
 ## Troubleshooting
 
 ### Common Issues
 
+**Pygame not found:**
+
+```bash
+pip install pygame
+```
+
+**Window doesn't appear:**
+
+- Check if another application is blocking the window
+- Try running from terminal/command prompt
+- Ensure display drivers are up to date
+
 **Timer doesn't start:**
 
 - Ensure you're running Python 3.6+
-- Check that tkinter is installed
+- Check that Pygame is properly installed
 - Try restarting the application
 
 **Settings not saving:**
@@ -169,16 +205,35 @@ You can customize all timer durations through the settings:
 - Check file permissions in the project directory
 - Ensure the application has write access
 
-**UI looks different:**
+**Performance issues:**
 
-- The appearance may vary slightly between operating systems
-- Colors and fonts are optimized for cross-platform compatibility
+- Close other graphics-intensive applications
+- Update graphics drivers
+- Reduce system load
 
 ### Performance
 
-- The application uses minimal system resources
+- The application uses moderate system resources
 - Timer accuracy is maintained through threading
-- UI updates are optimized for smooth performance
+- Graphics are optimized for smooth 60 FPS performance
+
+## Advantages of Pygame Version
+
+### Benefits
+
+- **Modern graphics**: Professional-looking interface
+- **Cross-platform**: Works on all major operating systems
+- **Responsive UI**: Smooth animations and hover effects
+- **Visual feedback**: Clear progress indicators and status
+- **Easy to use**: Intuitive click-based interface
+- **Customizable**: Easy to modify colors and layout
+
+### Use Cases
+
+- **Desktop productivity**: Perfect for focused work sessions
+- **Professional environments**: Clean, professional appearance
+- **Visual learners**: Clear visual progress indicators
+- **Accessibility**: Large buttons and clear text
 
 ## Contributing
 
@@ -196,7 +251,7 @@ This project is open source and available under the MIT License.
 ## Acknowledgments
 
 - Inspired by the Pomodoro Technique by Francesco Cirillo
-- Built with Python and Tkinter
+- Built with Python and Pygame
 - Designed for productivity and focus
 
 ---
